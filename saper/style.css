@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#field {
+  --cell-size: 5vmin;
+
+  position: relative;
+  display: grid;
+  background-color: #a8a8a8;
+  grid-template-columns: repeat(10, var(--cell-size));
+  grid-template-rows: repeat(10, var(--cell-size));
+  border: solid black 2px;
+}
+.cell {
+  --x: 1;
+  --y: 0;
+  top: calc(var(--y) * (var(--cell-size)));
+  left: calc(var(--x) * (var(--cell-size)));
+  border: solid rgb(95, 94, 94) 2px;
+  border-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vmin;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vmin;
+  height: 5vmin;
+}
+
+.emptyCell {
+  background-color: blue;
+}
+.mineCell {
+  background-image: url('./minepng.png');
+  background-size: contain;
+}
